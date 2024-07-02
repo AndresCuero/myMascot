@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM</title>
+    <link rel="stylesheet" href="../styles/outputt.css">
+    <link rel="shortcut icon" href="../img-prin/favicom.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="styles/stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="styles/stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    </head>
+
+    <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+        <!-- Header -->
+        <header th:insert="fragments/header :: menu-principal" class="flex flex-col">
+
+    
+    
+</header>
+
+        <!-- perfil de la mascota -->
+        <main class="mt-20">
+            <section>
+                <div class="container mx-auto mt-10 bg-white rounded-lg shadow-lg">
+                    <div class="p-8">
+                        <div class="md:flex">
+                            <div class="container mx-auto my-8 flex  md:flex-row sm:flex-col items-center">
+   
+
+<div id="default-carousel" class="relative w-1/2 sm:w-3/4 w-1/2" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-80 overflow-hidden rounded-lg sm:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/logos/{filename}(filename=${mascota.imagen_perfil})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/logos/{filename}(filename=${mascota.imagen.foto1})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/logos/{filename}(filename=${mascota.imagen.foto2})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/logos/{filename}(filename=${mascota.imagen.foto3})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+
+
+
+
+                              
+                            <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
+
+                                <h2 th:text="${mascota.nombre}" class="text-3xl font-semibold mb-6">Golden Retriever</h2>
+                                <p class="text-gray-600 mb-4">
+                                    <strong>Raza:</strong> <span th:text="' '+${mascota.raza.nombre}"></span>
+                                </p>
+                                <p class="text-gray-600 mb-4">
+                                    <strong>Edad:</strong> <span th:text="' '+${mascota.edad}" ></span>
+                                </p>
+                                <p class="text-gray-600 mb-4">
+                                    <strong>Tamaño:</strong> <span th:text="' '+${mascota.estado}" ></span>
+                                </p>
+                                <b>Descripción</b>
+                                <p th:text="${mascota.descripcion}" class="text-gray-600 mb-6"></p>
+                                <div class="flex">
+                                    <a th:href="@{/solicitudes/create/{id}(id=${mascota.ID_Mascota})}"
+                                        class="bg-red-500 text-white py-2 px-4 rounded-full mr-4 hover:bg-red-700">Adoptar</a>
+
+                                    <button
+                                        class="bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-700">Reportar</button>
+                                </div>
+                                <div class="mt-6">
+                                    <button class="flex items-center text-red-500 font-semibold">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             class="w-6 h-6 mr-2">
+                                        <path
+                                            d="M12 4.318l-1.42-1.42C5.755 1.265 2 4.838 2 9.267c0 3.373 2.686 6.105 6.292 6.998C9.192 20.07 10.48 22 12 22s2.808-1.93 3.708-5.735C19.314 15.372 22 12.64 22 9.267c0-4.429-3.755-8.002-8.58-6.369L12 4.318z" />
+                                        </svg>
+                                        Agregar a Favoritos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
+
+            <!-- Comments Section -->
+            <div class="container mx-auto mt-10 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold mb-6">Comentarios</h3>
+
+                <!-- Formulario de Comentario -->
+<form th:action="@{/publicacion/save}" method="post" th:object="${comentarios}">
+    <div class="comment-form mb-6">
+        <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white">
+            Descripción
+            <textarea 
+                class="w-full h-14 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                name="mensaje"
+                id="mensaje"                            
+                th:field="*{mensaje}"
+                placeholder="Escribe aquí tu comentario..."
+                minlength="10"
+                maxlength="500"
+               ></textarea>
+        </label>
+        <button type="submit"
+                class="bg-blue-500 text-white py-2 px-4 rounded-full mt-2 hover:bg-blue-700 transition duration-300">
+            Publicar Comentario
+        </button>
+    </div>
+</form>
+
+
+
+
+
+
+                <!-- Comentarios -->
+<div th:each="losComentarios : ${losComentario}">
+    <img th:src="'/logos/' + ${losComentarios.imagenPerfil}" alt="ImgPersona1"
+         class="user-avatar w-12 h-12 rounded-full object-cover">
+    <div class="comment-content bg-gray-100 p-4 rounded-lg shadow-lg w-full">
+        <div class="comment-meta flex justify-between items-center mb-2">
+            <strong th:text="${losComentarios.nombre}"></strong>
+            <p th:text="${#dates.format(losComentarios.fecha_creacion, 'yyyy/MM/dd')}" class="text-sm text-gray-500"></p>
+        </div>
+        <p th:text="${losComentarios.mensaje}" class="text-gray-700"></p>
+    </div>
+</div>
+
+
+            </div>
+
+            </main>
+        <!-- Footer -->
+            <footer th:insert="fragments/footer :: pie-pagina" >
+                
+            </footer>
+            
+        <script >
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselItems = document.querySelectorAll('[data-carousel-item]');
+    const carouselIndicators = document.querySelectorAll('[data-carousel-slide-to]');
+    let currentIndex = 0;
+    let interval;
+
+    function showSlide(index) {
+        carouselItems.forEach((item, i) => {
+            item.classList.toggle('hidden', i !== index);
+        });
+
+        carouselIndicators.forEach((indicator, i) => {
+            indicator.setAttribute('aria-current', i === index ? 'true' : 'false');
+        });
+
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        let nextIndex = (currentIndex + 1) % carouselItems.length;
+        showSlide(nextIndex);
+    }
+
+    function prevSlide() {
+        let prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        showSlide(prevIndex);
+    }
+
+    function startCarousel() {
+        interval = setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
+    }
+
+    function stopCarousel() {
+        clearInterval(interval);
+    }
+
+    document.querySelector('[data-carousel-next]').addEventListener('click', () => {
+        stopCarousel();
+        nextSlide();
+        startCarousel();
+    });
+
+    document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+        stopCarousel();
+        prevSlide();
+        startCarousel();
+    });
+
+    carouselIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            stopCarousel();
+            showSlide(index);
+            startCarousel();
+        });
+    });
+
+    showSlide(currentIndex);
+    startCarousel();
+});
+
+        </script>
+
+    </body>
+
+</html>

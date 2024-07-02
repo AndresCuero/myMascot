@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM</title>
+    <link rel="stylesheet" href="../styles/outputt.css">
+    <link rel="shortcut icon" href="../img-prin/favicom.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="styles/stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="styles/stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+</head> 
+<body>
+
+
+
+        <header th:insert="fragments/header :: menu-principal" class="flex flex-col">
+
+    
+    
+</header>
+
+<div class="relative  bg-fixed" >
+            
+    <img class="bg-fixed w-full" src="../img-prin/Sin título.png" id="fondo">
+</div>
+
+<div class="flex flex-col items-center bg-amber-400"> 
+    <h2 class="text-5xl font-bold text-black mt-10  mb-8 flex">Quienes somos</h2>
+    <div class="lg:flex mb:flex lg:w-full">
+    <div class="lg:w-1/2  text-base text-center px-8 lg:p-14 lg:px-28 pt-24 mb-8">
+       <p class="text-black ">
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit cum ipsa a in hic dolore quaerat! Sunt incidunt suscipit veniam ratione. Fuga provident iusto repellat accusantium magni est voluptas expedita.
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit cum ipsa a in hic dolore quaerat! Sunt incidunt suscipit veniam ratione. Fuga provident iusto repellat accusantium magni est voluptas expedita.
+       </p>
+    </div>
+    <div class="lg:w-1/2 items-center px-20 lg:px-10 lg:pt-0 mb-8 lg:mt-0 lg:pr-52 ">
+       <img src="../img-prin/nosotros.png" alt="">
+    </div>
+</div>  
+</div>
+<div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mas sobre nosotros</h2>
+      <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
+
+      <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Origin</dt>
+          <dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Material</dt>
+          <dd class="mt-2 text-sm text-gray-500">Solid walnut base with rare earth magnets and powder coated steel card cover</dd>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Vision
+          <dd class="mt-2 text-sm text-gray-500">6.25&quot; x 3.55&quot; x 1.15&quot;</dd>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Finish</dt>
+          <dd class="mt-2 text-sm text-gray-500">Hand sanded and finished with natural oil</dd>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Includes</dt>
+          <dd class="mt-2 text-sm text-gray-500">Wood card tray and 3 refill packs</dd>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+          <dt class="font-medium text-gray-900">Considerations</dt>
+          <dd class="mt-2 text-sm text-gray-500">Made from natural materials. Grain and color vary with each item.</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8 mb-12">
+      <img class="hover:scale-110 transition-transform rounded-lg h-96" src="../img-prin/WhatsApp Image 2024-04-19 at 5.44.46 PM.jpeg">
+      <img src="../img-prin/WhatsApp Image 2024-04-22 at 10.56.45 PM.jpeg"  class="hover:scale-110 transition-transform rounded-lg h-96">
+      <img src="../img-prin/WhatsApp Image 2024-04-24 at 10.40.14 AM.jpeg"  class="hover:scale-110 transition-transform rounded-lg h-96 w-96">
+      <img src="../img-prin/WhatsApp Image 2024-04-24 at 10.39.07 AM.jpeg " class="hover:scale-110 transition-transform rounded-lg h-96 w-96 mb-12">
+      <div class="bg-amber-500 p-8 rounded-xl flex flex-col items-center">
+        <img class="w-40 h-40 object-cover -mt-20 rounded-full shadow-2xl mb-4" src="../img-prin/WhatsApp Image 2024-04-19 at 5.44.46 PM.jpeg" alt="">
+        <p class="font-bold">Origin</p>
+        <p>Designed by Good Goods, Inc.</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="bg-gray-100 lg:px-10 pl-20 mb-8 mt-8 flex flex-wrap justify-center gap-10 overflow-auto pt-5">
+    <div th:each="mascotas : ${mascota.content}" class="bg-amber-400 text-black w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mb-8 relative">
+        <img th:src="@{/logos/{img}(img=${mascotas.imagen_perfil})}" class="w-full h-32 object-cover" alt="">
+        <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+                <span class="px-3 rounded-full text-xs bg-gray-100 text-sky-500">Cariñoso</span>
+                <span class="px-3 rounded-full text-xs bg-gray-100 text-sky-500">Juguetón</span>
+            </div>
+            <h2 th:text="${mascotas.nombre}" class="font-bold text-3xl overflow-hidden whitespace-nowrap"></h2>
+            <div>
+                <span th:text="${mascotas.descripcion}" class="text-xs font-semibold"></span><br>
+                <span th:text="${mascotas.estado}" class="bg-green-400 px-5 py-0.5 rounded-md text-xs text-white mb-20 inline-block"></span>
+                <div class="bottom-5 left-1/2 transform -translate-x-1/2 absolute mt-20 flex gap-2 w-full px-5 ">
+                     <a class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+                        Adoptar
+                    </a>
+<a th:href="@{/saver/{id}(id=${mascotas.ID_Mascota})}" 
+   th:if="${mascotas.calificacion == null or mascotas.calificacion.megusta == null or !mascotas.calificacion.megusta}"
+   class="likeButton flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md cursor-pointer">
+    <img src="../img-prin/heart-fill.png" alt="">
+</a>
+<a th:href="@{/saver/{id}(id=${mascotas.ID_Mascota})}" 
+   th:if="${mascotas.calificacion != null and mascotas.calificacion.megusta != null and mascotas.calificacion.megusta}"
+   class="likeButton flex-grow flex justify-center items-center bg-sky-500 hover:bg-sky-600 transition rounded-md cursor-pointer">
+    <img src="../img-prin/heart-fill.png" alt="">
+</a>
+
+
+
+                    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
+                        <img src="../img-prin/eye-fill.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+    
+
+  <div class="flex justify-end px-10 mb-8">
+            <a th:href="@{/publicaciones/todas}" class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+                Ver más
+            </a>
+        </div>
+
+
+    
+</body>
+
+<footer th:insert="fragments/footer :: pie-pagina">
+    
+</footer>
+<script src="../static/js/pagInicio.js"></script>
+</html>
