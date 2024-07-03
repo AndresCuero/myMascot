@@ -41,6 +41,11 @@ public class usuarioServiceIMP implements IusuarioService{
         return null;
     }
 
+    @Override
+    public List<usuario> usuarioEliminado(int estatus) {
+      return  repoUsuario.findByEstatus(estatus);
+    }
+
    
     
 }

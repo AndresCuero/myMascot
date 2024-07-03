@@ -16,5 +16,7 @@ public interface IusuarioService {
       usuario buscarPorCorreo(String correo);
     
       void guardar(usuario usuario);
+      
+      List<usuario> usuarioEliminado(int estatus);
     
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mascotas registradas</title>
+    <link rel="shortcut icon" href="../img-prin/favicom.png" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  
+  <body>
+    
+      <header th:insert="fragments/header :: menu-principal" class="flex flex-col   ">
+
+        </header>
+  
+  <main class="bg-gray-100 flex flex-col items-center min-h-screen">
+    <h1 class="text-4xl font-bold mb-8 mt-8 text-gray-800">Mascotas Registradas</h1>
+    <div  th:each="mascotas : ${mascota}" class="w-full md:w-4/5 bg-amber-400 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/3 mb-4 md:mb-0 md:mr-6">
+        <img th:src="@{/logos/{img} (img=${mascotas.imagen_perfil})}" alt="Foto" class="w-full rounded-lg shadow-md" />
+      </div>
+      <div class="w-full md:w-2/3">
+        <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800">Mascota</h2>
+        <form class="space-y-4">
+          <div class="flex items-center">
+            <label for="edad" class="block text-sm font-medium text-gray-700 w-1/4">Edad</label>
+            <span th:text="${mascotas.edad}"id="edad" class="bg-white rounded-md w-3/4 p-2 border border-gray-300 text-gray-700">Edad</span>
+          </div>
+          <div class="flex items-center">
+            <label for="tamaño" class="block text-sm font-medium text-gray-700 w-1/4">Tamaño</label>
+            <span th:text="${mascotas.estado}" id="tamaño" class="bg-white rounded-md w-3/4 p-2 border border-gray-300 text-gray-700">Tamaño</span>
+          </div>
+          <div class="flex items-center">
+            <label for="raza" class="block text-sm font-medium text-gray-700 w-1/4">Raza</label>
+            <span th:text="${mascotas.raza.nombre}" id="raza" class="bg-white rounded-md w-3/4 p-2 border border-gray-300 text-gray-700">Raza</span>
+          </div>
+          <div class="flex items-center">
+            <label for="titular" class="block text-sm font-medium text-gray-700 w-1/4">Titular</label>
+            <span th:text="${mascotas.usuario.nombre_completo}" id="titular" class="bg-white rounded-md w-3/4 p-2 border border-gray-300 text-gray-700">Titular</span>
+          </div>
+        </form>
+        <!-- Boton de eliminar mascota -->
+        <div class="mt-8 flex justify-center">
+          <a th:href="@{/administrador/eliminar/{id} (id=${mascotas.ID_Mascota})}" class="bg-yellow-500 text-white py-2 px-4 rounded border hover:bg-yellow-600 w-full sm:w-auto text-center">Eliminar Usuario</a>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+ <footer th:insert="fragments/footer :: pie-pagina">
+
+        </footer>
+      
+  </body>
+</html>

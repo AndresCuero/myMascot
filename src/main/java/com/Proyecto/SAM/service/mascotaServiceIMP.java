@@ -94,6 +94,12 @@ public Page<mascota> buscarTodasOrdenadaPorCalificacionYaprobadas(Pageable page)
         return 0; 
     }
 
+    @Override
+    public List<mascota> buscarMascotasEliminada(String estatus) {
+      return  repoMascota.findByEstatus(estatus);
+        
+    }
+
  
 
  

@@ -21,6 +21,8 @@ public interface repositoryMascota extends JpaRepository<mascota, Integer> {
 
      @Query("SELECT m FROM mascota m WHERE m.estatus = 'aprobada'")
      List<mascota> findByEstatus();
+     
+     List<mascota> findByEstatus( String estatus);
 
     @Query("SELECT m FROM mascota m WHERE m.animal.especie = :especie AND m.estatus = 'aprobada'")
     List<mascota> findByEspecie(@Param("especie") String especie);

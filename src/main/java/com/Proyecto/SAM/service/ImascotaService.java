@@ -39,6 +39,8 @@ public interface ImascotaService {
     
     List<mascota> misPublicaciones(Integer ID_mascota);
     
+    List<mascota> buscarMascotasEliminada(String estatus);
+    
     Integer buscarPorUsuarioParaSaberSiTieneMascota(Integer ID_mascota);
     
     
