@@ -36,7 +36,7 @@ public class DatabaseWebSecurity {
                 // Los recursos estáticos no requieren autenticación
                 .requestMatchers("/img-prin/**", "/js/**", "/styles/**", "logos/**").permitAll()
                 // Las vistas públicas no requieren autenticación
-                .requestMatchers("/", "/buscar", "/buscar/**", "/publicaciones/**", "/usuario/registro", "/save", "/registro", "/publicacion/**", "/saver/**").permitAll()
+                .requestMatchers("/", "/buscar", "/buscar/**", "/publicaciones/**", "/usuario/registro", "/save", "/registro","publicacion/perfil/**", "/saver/**").permitAll()
                 // Asignar permisos a URLs por ROLES
                 .requestMatchers("/mascota/**").hasAnyAuthority("USUARIO")
                 // Todas las demás URLs de la Aplicación requieren autenticación

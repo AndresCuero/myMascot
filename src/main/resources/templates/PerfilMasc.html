@@ -41,7 +41,7 @@
             <img th:src="@{/logos/{filename}(filename=${mascota.imagen_perfil})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div  class="hidden duration-700 ease-in-out" data-carousel-item>
             <img th:src="@{/logos/{filename}(filename=${mascota.imagen.foto1})}" class="absolute h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
@@ -80,10 +80,6 @@
         </span>
     </button>
 </div>
-
-
-
-
                               
                             <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
 
@@ -129,7 +125,7 @@
                 <h3 class="text-2xl font-semibold mb-6">Comentarios</h3>
 
                 <!-- Formulario de Comentario -->
-<form th:action="@{/publicacion/save}" method="post" th:object="${comentarios}">
+<form sec:authorize="isAuthenticated()" th:action="@{/publicacion/save}" method="post" th:object="${comentarios}">
     <div class="comment-form mb-6">
         <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-white">
             Descripción

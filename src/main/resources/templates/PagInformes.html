@@ -29,20 +29,43 @@
                 <span th:text="${mascotas.descripcion}" class="text-xs font-semibold"></span><br>
                 <span th:text="${mascotas.estado}" class="bg-green-400 px-5 py-0.5 rounded-md text-xs text-white"></span>
                 <div class="mt-5 flex gap-2">
-                    <button class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
-                        Adoptar
-                    </button>
-                    <button class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
-                        <img src="../img-prin/heart-fill.png" alt="">
-                    </button>
-                    <button class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
-                        <img src="../img-prin/eye-fill.png" alt="">
+                    <a th:href="@{/solicitudes/create/{id}(id=${mascotas.ID_Mascota})}" class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+        Adoptar
+    </a>
+    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
+        <img src="../img-prin/eye-fill.png" alt="">
+    </a>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+    
+       <!--div class="bg-gray-100 lg:px-10 pl-20 mb-8 mt-8 flex flex-wrap justify-center gap-10 overflow-auto pt-5">
+    <div th:each="mascotas : ${mascota.content}" class="bg-amber-400 text-black w-72 min-h-[10rem] shadow-lg rounded-md overflow-hidden mb-8 relative">
+        <img th:src="@{/logos/{img}(img=${mascotas.imagen_perfil})}" class="w-full h-32 object-cover" alt="">
+        <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+            </div>
+            <h2 th:text="${mascotas.nombre}" class="font-bold text-3xl overflow-hidden whitespace-nowrap"></h2>
+            <div>
+                <span th:text="${mascotas.descripcion}" class="text-xs font-semibold"></span><br>
+                <span th:text="${mascotas.estado}" class="bg-green-400 px-5 py-0.5 rounded-md text-xs text-white mb-20 inline-block"></span>
+<div class="bottom-5 left-1/2 transform -translate-x-1/2 absolute mt-20 flex gap-2 w-full px-5 ">
+    <a th:href="@{/solicitudes/create/{id}(id=${mascotas.ID_Mascota})}" class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+        Adoptar
+    </a>
+    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
+        <img src="../img-prin/eye-fill.png" alt="">
+    </a>
+</div>
+
+            </div>
+        </div>
+    </div>
+   
+</div-->
        
     
   

@@ -89,34 +89,20 @@
         <img th:src="@{/logos/{img}(img=${mascotas.imagen_perfil})}" class="w-full h-32 object-cover" alt="">
         <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
-                <span class="px-3 rounded-full text-xs bg-gray-100 text-sky-500">Cariñoso</span>
-                <span class="px-3 rounded-full text-xs bg-gray-100 text-sky-500">Juguetón</span>
             </div>
             <h2 th:text="${mascotas.nombre}" class="font-bold text-3xl overflow-hidden whitespace-nowrap"></h2>
             <div>
                 <span th:text="${mascotas.descripcion}" class="text-xs font-semibold"></span><br>
                 <span th:text="${mascotas.estado}" class="bg-green-400 px-5 py-0.5 rounded-md text-xs text-white mb-20 inline-block"></span>
-                <div class="bottom-5 left-1/2 transform -translate-x-1/2 absolute mt-20 flex gap-2 w-full px-5 ">
-                     <a class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
-                        Adoptar
-                    </a>
-<a th:href="@{/saver/{id}(id=${mascotas.ID_Mascota})}" 
-   th:if="${mascotas.calificacion == null or mascotas.calificacion.megusta == null or !mascotas.calificacion.megusta}"
-   class="likeButton flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md cursor-pointer">
-    <img src="../img-prin/heart-fill.png" alt="">
-</a>
-<a th:href="@{/saver/{id}(id=${mascotas.ID_Mascota})}" 
-   th:if="${mascotas.calificacion != null and mascotas.calificacion.megusta != null and mascotas.calificacion.megusta}"
-   class="likeButton flex-grow flex justify-center items-center bg-sky-500 hover:bg-sky-600 transition rounded-md cursor-pointer">
-    <img src="../img-prin/heart-fill.png" alt="">
-</a>
+<div class="bottom-5 left-1/2 transform -translate-x-1/2 absolute mt-20 flex gap-2 w-full px-5 ">
+    <a th:href="@{/solicitudes/create/{id}(id=${mascotas.ID_Mascota})}" class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+        Adoptar
+    </a>
+    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
+        <img src="../img-prin/eye-fill.png" alt="">
+    </a>
+</div>
 
-
-
-                    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
-                        <img src="../img-prin/eye-fill.png" alt="">
-                    </a>
-                </div>
             </div>
         </div>
     </div>

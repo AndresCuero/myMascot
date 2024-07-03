@@ -7,8 +7,11 @@ import com.Proyecto.SAM.model.usuario;
 import com.Proyecto.SAM.service.IcomentarioService;
 import com.Proyecto.SAM.service.ImascotaService;
 import com.Proyecto.SAM.service.IusuarioService;
+import jakarta.servlet.http.HttpSession;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -78,18 +81,12 @@ public String guardarComentario(@ModelAttribute("comentario") comentarios coment
     mascota mascota = mascotaService.buscarPorId(ID_mascotaPerfil);
     comentarios.setMascota(mascota);   
     comentarioService.guardar(comentarios);
-    return "redirect:/";
+    return "redirect:/publicacion/perfil/"+ID_mascotaPerfil;
 }
-
-
-
-    
-  
 
     @ModelAttribute
     public void setGenericos(Model model) {
         mascota mascotaBuscar = new mascota();
         model.addAttribute("buscar", mascotaBuscar);
     }
-
 }

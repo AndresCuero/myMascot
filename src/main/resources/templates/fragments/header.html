@@ -1,39 +1,43 @@
+
+
 <nav th:fragment="menu-principal" class="bg-white py-6 relative mb-18 w-full">
     <div class="container mx-auto flex items-center px-8 xl:p-0">
         <!-- Logo -->
         <div class="flex flex-grow">
             <a href=""><img class="w-24" src="../img-prin/logo.png" alt="Logo"></a>
         </div>
-        
+
         <!-- Mobile Menu Icons -->
         <div class="flex lg:hidden z-10">
             <!-- Notifications Icon -->
-            <li class="group list-none">
-                <svg id="notificationIcon" class="h-8 text-black hover:text-amber-400 lg:text-black mr-7 cursor-pointer transition duration-500 ease-in-out lg:mb-0" onclick="openNot2();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path  d="M5 18H19V11.0314C19 7.14806 15.866 4 12 4C8.13401 4 5 7.14806 5 11.0314V18ZM12 2C16.9706 2 21 6.04348 21 11.0314V20H3V11.0314C3 6.04348 7.02944 2 12 2ZM9.5 21H14.5C14.5 22.3807 13.3807 23.5 12 23.5C10.6193 23.5 9.5 22.3807 9.5 21Z"></path>
+            <li class="group mb-8 lg:mb-0 list-none relative">
+                <svg id="notificationIcon" class="h-8 text-black hover:text-amber-400 lg:text-black mr-7 cursor-pointer transition duration-500 ease-in-out lg:mb-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 18H19V11.0314C19 7.14806 15.866 4 12 4C8.13401 4 5 7.14806 5 11.0314V18ZM12 2C16.9706 2 21 6.04348 21 11.0314V20H3V11.0314C3 6.04348 7.02944 2 12 2ZM9.5 21H14.5C14.5 22.3807 13.3807 23.5 12 23.5C10.6193 23.5 9.5 22.3807 9.5 21Z"></path>
                 </svg>
-                <ul id="not2" class="hidden absolute top-20 bg-amber-400 left-0 w-full z-50">
+                <ul id="not2" class="lg:absolute top-9 hidden group-hover:block px-1 rounded-md border border-amber-400 mt-2 bg-amber-400 w-full z-50">
                     <h4 class="text-lg font-medium px-5 py-2">Notificaciones</h4>
                     <li class="bg-amber-300 px-2">
                         <div class="flex m-2">
                             <img class="w-32 rounded-md" src="../img-prin/persona1.webp" alt="Persona 1">
-                            <div class="text-left px-2">
-                                <h5><strong>Laura Rojas</strong> acepto tu solicitud de adopcion.</h5>
-                                <p class="text-sky-500">9h</p>
-                            </div>
+                                <div class="text-left px-2">
+                                    <h5><strong>Laura Rojas</strong> aceptó tu solicitud de adopción.</h5>
+                                    <p class="text-sky-500">9h</p>
+                                </div>
                         </div>
                     </li>
                     <li class="bg-amber-300 px-2">
                         <div class="flex m-2">
                             <img class="w-32 rounded-md" src="../img-prin/persona2.jpg" alt="Persona 2">
-                            <div class="text-left px-2">
-                                <h5><strong>Alejandro Alvarez</strong> acepto tu solicitud de adopcion.</h5>
-                                <p class="text-sky-500">13h</p>
-                            </div>
+                                <div class="text-left px-2">
+                                    <h5><strong>Alejandro Alvarez</strong> aceptó tu solicitud de adopción.</h5>
+                                    <p class="text-sky-500">13h</p>
+                                </div>
                         </div>
                     </li>
                 </ul>
             </li>
+
+
             <!-- Menu Icon -->
             <svg id="menuIcon" class="h-8 text-black hover:text-amber-400 lg:text-black lg:mr-7 cursor-pointer transition duration-500 ease-in-out lg:mb-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" onclick="openMenu();">
                 <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
@@ -47,8 +51,8 @@
                     <a th:href="@{/}" class="text-black lg:bg-amber-400 py-2.5 px-5 rounded-md transition duration-500 ease-in-out hover:text-white font-medium text-lg lg:mr-7 font-sans">Inicio</a>
                 </li>
                 <li class="group mb-8 lg:mb-0">
-                    <a href="#" class="text-black lg:text-black py-2.5 px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium text-lg lg:mr-7 mb-5">Mascotas<i class="ri-arrow-down-s-line"></i></a>
-                    <ul class="lg:absolute top-9 hidden group-hover:block px-1 rounded-md border border-amber-400 border-2 mt-2">
+                    <a href="#" class="text-black lg:text-black py-2.5 px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium text-lg lg:pr-7 pb-5">Mascotas<i class="ri-arrow-down-s-line"></i></a>
+                    <ul class="lg:absolute top-9 hidden group-hover:block px-1 rounded-md border border-amber-400 border-2 mt-2 bg-white">
                         <li class="mb-2 mt-2 lg:mt-0 lg:mb-0">
                             <a th:href="@{/buscar/mascotaPerro}" class="text-black lg:text-black px-10 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">Perros</a>
                         </li>
@@ -58,62 +62,37 @@
                     </ul>
                 </li>
                 <li class="mb-8 lg:mb-0">
-                   
+
                     <a th:href="@{/mascota/index}" class="text-black lg:text-black py-2.5 px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium text-lg lg:mr-7">Donaciones</a>
                 </li>
                 <li class="group mb-8 lg:mb-0" sec:authorize="hasAnyAuthority('USUARIO')">
                     <a href="#" class="text-black lg:text-black py-2.5 px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium text-lg lg:mr-7">Informes<i class="ri-arrow-down-s-line"></i></a>
                     <ul class="lg:absolute top-9 hidden group-hover:block px-0.5 rounded-md border border-amber-400 border-2 bg-white">
                         <li class="mb-2 mt-2 lg:mt-0 lg:mb-0">
-                            <a href="#" class="text-black lg:text-black px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">Adoptadas</a>
+                            <a href="#" class="text-black lg:text-black px-5 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">historial de solicitudes</a>
                         </li>
                         <li th:if="mascota != null"  class="mb-2 lg:mb-0">
                             <a th:href="@{/publicacion/index}" class="text-black justify-right lg:text-black px-7 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">Mis publicaciones</a>
                         </li>
                         <li>
-                            <a href="#" class="text-black lg:text-black px-7 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">Favoritos</a>
+                            <a href="#" class="text-black lg:text-black px-7 rounded-md lg:hover:bg-amber-400 transition duration-500 ease-in-out hover:text-white font-medium">historial de peticiones</a>
                         </li>
                     </ul>
                 </li>
-                
+
             </ul>
-            <div>
-                <ul class="flex flex-col lg:flex-row mx-auto items-center">
-                    <li sec:authorize="hasAnyAuthority('USUARIO')" class="flex group hidden lg:block list-none lg:flex-row mx-auto">
-                        <svg class="h-8 mr-7 text-black hover:text-amber-400 lg:text-black cursor-pointer transition duration-500 ease-in-out lg:mb-0" onclick="openNot();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 18H19V11.0314C19 7.14806 15.866 4 12 4C8.13401 4 5 7.14806 5 11.0314V18ZM12 2C16.9706 2 21 6.04348 21 11.0314V20H3V11.0314C3 6.04348 7.02944 2 12 2ZM9.5 21H14.5C14.5 22.3807 13.3807 23.5 12 23.5C10.6193 23.5 9.5 22.3807 9.5 21Z"></path>
-                        </svg>
-                        <ul id="not" class="absolute bg-white hidden px-0.5 rounded-md border border-amber-400 border-2 right-1 w-96">
-                            <h4 class="text-lg font-medium px-5 py-2">Notificaciones</h4>
-                            <li class="mt-1 hover:bg-amber-300">
-                                <div class="flex m-2 hover:bg-gray-300">
-                                    <img class="w-32 rounded-md" src="../img-prin/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.avif" alt="Persona 1">
-                                    <div class="text-left px-2">
-                                        <h5><strong>Laura Rojas</strong> acepto tu solicitud de adopcion.</h5>
-                                        <p class="text-sky-500">9h</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="mt-1">
-                                <div class="flex m-2">
-                                    <img class="w-32 rounded-md" src="../img-prin/Hero_Mobile_Cuenta_Personas_V1_1_8046e424ea.webp" alt="Persona 2">
-                                    <div class="text-left px-2">
-                                        <h5><strong>Alejandro Alvarez</strong> acepto tu solicitud de adopcion.</h5>
-                                        <p class="text-sky-500">13h</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+            <div class="flex justify-around">
+
+
                     <!-- Search Form -->
                     <div class="flex items-center mb-8 lg:mb-0">
                         <form class="flex items-center mb-8 lg:mb-0" th:action="@{/buscar/imput}" method="get" th:object="${buscar}">
                             <input type="text" th:field="*{descripcion}" class="h-8 px-4 py-2 border rounded-l-lg text-black focus:outline-none focus:ring-2 focus:ring-amber-400 transition duration-500 ease-in-out" placeholder="Escriba una búsqueda">
-                            <button type="submit" class="h-8 px-4 py-2 bg-black text-white hover:bg-amber-400 transition duration-500 ease-in-out rounded-r-lg">
-                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
-                                </svg>
-                            </button>
+                                <button type="submit" class="h-8 px-4 py-2 bg-black text-white hover:bg-amber-400 transition duration-500 ease-in-out rounded-r-lg">
+                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
+                                    </svg>
+                                </button>
                         </form>
                     </div>
                     <!-- Profile Icon -->
@@ -121,54 +100,53 @@
                         <ul>
                             <li>
                                 <a th:href="@{/index}" class="h-8 text-black hover:text-white lg:text-black cursor-pointer lg:hover:text-amber-400 transition duration-500 ease-in-out mb-8 lg:mb-0">
-                                    <svg class="h-8 text-black hover:text-white lg:text-black cursor-pointer lg:hover:text-amber-400 transition duration-500 ease-in-out mb-8 lg:mb-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <svg class="h-8 text-black hover:text-white lg:text-black cursor-pointer lg:hover:text-amber-400 transition duration-500 ease-in-out mb-8 ml-5 lg:mb-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path>
                                     </svg>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Botón Salir -->
-<div sec:authorize="isAuthenticated()" class="relative inline-block text-left">
-    <a href="javascript:void(0);" class="inline-flex justify-center items-center w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 ml-2">
-        <span class="text-xl font-bold"> 
-            [[${session.usuario.nombre_completo.substring(0, 1).toUpperCase()}]]
-        </span>
-    </a>
+                    <div sec:authorize="isAuthenticated()" class="relative inline-block text-left">
+                        <a href="javascript:void(0);" class="inline-flex justify-center items-center w-10 h-10 rounded-full bg-orange-500 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 ml-2">
+                            <span class="text-xl font-bold"> 
+                                [[${session.usuario.nombre_completo.substring(0, 1).toUpperCase()}]]
+                            </span>
+                        </a>
 
-    <div class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-        <div class="py-1" role="none">
-            <a th:href="@{/perfil/usuario}" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Ver perfil</a>
-            <a th:href="@{/logout}" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Cerrar sesión</a>
-        </div>
-    </div>
-</div>
+                        <div class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                            <div class="py-1" role="none">
+                                <a th:href="@{/perfil/usuario}" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Ver perfil</a>
+                                <a th:href="@{/logout}" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Cerrar sesión</a>
+                            </div>
+                        </div>
+                    </div>
 
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const dropdownButton = document.querySelector('.relative.inline-block > a');
-        const dropdownMenu = dropdownButton.nextElementSibling;
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const dropdownButton = document.querySelector('.relative.inline-block > a');
+                            const dropdownMenu = dropdownButton.nextElementSibling;
 
-        dropdownButton.addEventListener('click', function () {
-            dropdownMenu.classList.toggle('hidden');
-        });
+                            dropdownButton.addEventListener('click', function () {
+                                dropdownMenu.classList.toggle('hidden');
+                            });
 
-        document.addEventListener('click', function (event) {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-    });
-</script>
+                            document.addEventListener('click', function (event) {
+                                if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                                    dropdownMenu.classList.add('hidden');
+                                }
+                            });
+                        });
+                    </script>
 
-                    
-                          
+
+
                 </ul>
             </div>
         </div>
     </div>
 </nav>
-

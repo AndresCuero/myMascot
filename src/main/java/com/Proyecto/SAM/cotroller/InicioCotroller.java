@@ -38,8 +38,6 @@ public class InicioCotroller {
     @Autowired
     private ImascotaService mascotaService;
     
-        @Autowired
-    private IcomentarioService comentarioService;
 
     @Autowired
     private IcalificacionService calificacionService;
@@ -129,13 +127,10 @@ public class InicioCotroller {
         usuarioService.guardar(usuario);
 
         if (actualizarPerfil) {
-            mensajeAlGurdar.addFlashAttribute("mensaje", " Tu perfil fue actualizado ");
             session.setAttribute("usuario", usuarioService.buscarPorId(usuario.getID_usuario()));
             actualizarPerfil = false;
             return "redirect:/perfil/usuario";
         } else {
-            mensajeAlGurdar.addFlashAttribute("mensaje", "¡Hola " + usuario.getNombre_completo() + " Ya puedes iniciar sesión.");
-
             return "redirect:/registro";
         }
     }
@@ -154,7 +149,7 @@ public class InicioCotroller {
         return "redirect:/login";
     }
 
-    @GetMapping("/saver/{id}")
+  /*  @GetMapping("/saver/{id}")
     public String calificarMascota(@PathVariable("id") Integer idMascota, Model model, usuario usuario, @RequestHeader(value = "Referer", required = false) String referer) {
         mascota mascota = mascotaService.buscarPorId(idMascota);
         if (mascota == null) {
@@ -203,8 +198,9 @@ public class InicioCotroller {
         calificacionService.guardar(calificacion);
     }
     
+    */
     
-
+    
     @ModelAttribute
     public void setGenericos(Model model, Pageable page) {
         mascota mascotaBuscar = new mascota();

@@ -30,15 +30,12 @@
                 <span th:text="${mascotas.estado}" class="bg-green-400 px-5 py-0.5 rounded-md text-xs text-white"></span>
             </div>
             <div class="mt-auto flex gap-2">
-                <button class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
-                    Adoptar
-                </button>
-                <button class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
-                    <img src="../img-prin/heart-fill.png" alt="">
-                </button>
-                <button class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
-                    <img src="../img-prin/eye-fill.png" alt="">
-                </button>
+               <a th:href="@{/solicitudes/create/{id}(id=${mascotas.ID_Mascota})}" class="bg-sky-500 hover:bg-sky-600 rounded-md px-6 py-2 text-white font-medium tracking-wider transition">
+        Adoptar
+    </a>
+    <a th:href="@{/publicacion/perfil/{id}(id=${mascotas.ID_Mascota})}" class="flex-grow flex justify-center items-center bg-gray-300/60 hover:bg-gray-300/80 transition rounded-md">
+        <img src="../img-prin/eye-fill.png" alt="">
+    </a>
             </div>
         </div>
     </div>
