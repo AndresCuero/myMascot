@@ -38,7 +38,7 @@ public class HistorialSolicitudes {
       
       public static boolean activar = false;
     
-   /* @GetMapping("index")
+    @GetMapping("index")
     public String misSolicitudesDeMisMascota (Model model){
      List<solicitudes> solicitudes =solicitudesService.todasLasSolicitudes();
      model.addAttribute("solicitud",solicitudes );
@@ -46,7 +46,7 @@ public class HistorialSolicitudes {
      
     return "HistorialSolicitudes";
     }
-   */ 
+   
     @GetMapping("/eliminar/{id}")
     public String eliminarSolicitu(@PathVariable("id") Integer ID_solicitu, Model model){
      solicitudes solicitudes = solicitudesService.buscarPorId(ID_solicitu);     
@@ -86,7 +86,27 @@ public class HistorialSolicitudes {
      return"redirect:/solicitudes/index";
     }
     
-    
+        
+            @ModelAttribute
+    public usuario recuperarInformacionDeUsuario(Authentication auth, HttpSession session) {
+        String correo = auth.getName();
+        System.out.println("Nombre del usuario: " + correo);
+        for (GrantedAuthority rol : auth.getAuthorities()) {
+            System.out.println("ROL: " + rol.getAuthority());
+        }
+
+        if (session.getAttribute("usuario") == null) {
+            usuario usuario = usuarioService.buscarPorCorreo(correo);
+            usuario.setPassword(null);
+            System.out.println("usuario " + usuario);
+            session.setAttribute("usuario", usuario);
+            InicioCotroller.idUsuario = usuario.getID_usuario();
+            return usuario;
+            
+        }
+        
+        return null;    
+    }
           @ModelAttribute
     public void setGenericos(Model model, usuario usuario) {
         mascota mascotaBuscar = new mascota();

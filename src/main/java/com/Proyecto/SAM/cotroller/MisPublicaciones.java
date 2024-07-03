@@ -60,7 +60,7 @@ public class MisPublicaciones {
         mascota mascota = mascotaService.buscarPorId(ID_mascota);
         model.addAttribute("mascota", mascota);
         ActualizarPublicacion = true;
-        return "actualizarMascota";
+        return "actualizarMascota_1";
     }
     
     @GetMapping("/eliminar/{id}")
@@ -83,6 +83,8 @@ public String guardarComentario(@ModelAttribute("comentario") comentarios coment
     comentarioService.guardar(comentarios);
     return "redirect:/publicacion/perfil/"+ID_mascotaPerfil;
 }
+
+  
 
     @ModelAttribute
     public void setGenericos(Model model) {

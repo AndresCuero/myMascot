@@ -41,7 +41,7 @@ public class Solicitudes {
     public static Integer idMascota = 0;
     
     @GetMapping("/create/{id}")
-    public String create(@PathVariable("id") Integer id){        
+    public String create(@PathVariable("id") Integer id, usuario usuario, solicitudes solicitudes){        
         idMascota=id;  
     return "formularioAdopcion";
     }
@@ -53,15 +53,7 @@ public class Solicitudes {
                                  @RequestParam("direccion") String direccion,                             
                                  @RequestParam("documento") int documento,
                                  @RequestParam("tipo_documento") String tipo_documento ){
-       
-        model.addAttribute("usuario", usuarioService.buscarPorId(InicioCotroller.idUsuario));
-      usuario usuarios = usuarioService.buscarPorId(InicioCotroller.idUsuario);
-      usuarios.setDireccion(direccion);
-      usuarios.setDocumento(documento);
-      usuarios.setTipo_documento(tipo_documento);
-      usuarioService.guardar(usuarios);
-      
-       
+        
       solicitudes solicitudes = new solicitudes();
       solicitudes.setFecha(new Date());
       solicitudes.setEstado("Revisión");
@@ -69,6 +61,14 @@ public class Solicitudes {
       solicitudes.setMascota(mascotaService.buscarPorId(idMascota));
       solicitudes.setUsuario(usuarioService.buscarPorId(InicioCotroller.idUsuario));
       solicitudesService.guardarSolicitud(solicitudes);
+       
+      model.addAttribute("usuario", usuarioService.buscarPorId(InicioCotroller.idUsuario));
+      usuario usuarios = usuarioService.buscarPorId(InicioCotroller.idUsuario);
+      usuarios.setDireccion(direccion);
+      usuarios.setDocumento(documento);
+      usuarios.setTipo_documento(tipo_documento);
+      usuarioService.guardar(usuarios);
+      
       return "redirect:/peticion/index"; 
     
     }

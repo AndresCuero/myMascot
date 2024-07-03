@@ -146,7 +146,7 @@ public class InicioCotroller {
         SecurityContextLogoutHandler logoutHandler
                 = new SecurityContextLogoutHandler();
         logoutHandler.logout(request, null, null);
-        return "redirect:/login";
+        return "redirect:/";
     }
 
   /*  @GetMapping("/saver/{id}")
